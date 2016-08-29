@@ -1,16 +1,15 @@
-package deepClone;
+package clone.effectiveCompare;
 
 import java.io.Serializable;
 
-public class Employee implements Serializable {
+public class Employee implements Cloneable, Serializable {
 	private String name;
 	private int age;
-	private Address address;
 	
-	public Employee(String name, int age, Address address) {
+	public Employee(String name, int age) {
 		this.name = name;
 		this.age = age;
-		this.address = address;
+
 	}
 	
 	@Override
@@ -18,10 +17,15 @@ public class Employee implements Serializable {
 		StringBuilder sb = new StringBuilder();
 		sb.append("名字是：" + name);
 		sb.append("年龄是：" + age);
-		sb.append("地址是：" + address);
+
 		return sb.toString();
 	}
 	
+	@Override
+	public Employee clone() {
+		Employee employee = null;
+//		employee = 
+	}
 	
 	public String getName() {
 		return name;
@@ -35,12 +39,7 @@ public class Employee implements Serializable {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+
 	
 
 }

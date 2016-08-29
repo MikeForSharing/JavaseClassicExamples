@@ -1,4 +1,4 @@
-package deepClone;
+package clone.deepClone;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
