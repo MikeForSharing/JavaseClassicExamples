@@ -24,7 +24,12 @@ public class Employee implements Cloneable, Serializable {
 	@Override
 	public Employee clone() {
 		Employee employee = null;
-//		employee = 
+		try {
+			employee = (Employee) super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return employee;
 	}
 	
 	public String getName() {
